@@ -1,0 +1,21 @@
+<ion-menu [content]="nav">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Menu</ion-title>
+        
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <button ion-item icon-left (click)="onLoad(rootPage)" *ngIf="isAuthenticated" >
+                <ion-icon name="book"></ion-icon> Tarif Defterim</button>
+            <button ion-item icon-left (click)="onLoad(signinPage)" *ngIf="!isAuthenticated" >
+                <ion-icon name="log-in"></ion-icon>Giriş Yap</button>
+            <button ion-item icon-left (click)="onLoad(signupPage)" *ngIf="!isAuthenticated" >
+                        <ion-icon name="person"></ion-icon>Kayıt Ol</button>     
+            <button ion-item icon-left (click)="onLogout()" *ngIf="isAuthenticated">
+                        <ion-icon name="log-out"></ion-icon>Çıkış</button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #nav></ion-nav>
